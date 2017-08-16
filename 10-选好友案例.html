@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+	.father{
+	    position: absolute;
+	    width: 80px;
+	    height: 150px;
+	    overflow: hidden;
+	    border: 1px solid #ddd;
+        }
+        select {
+	    position: relative;
+            top: 0;
+	    left: 0;
+            width: 100px;
+            height: 150px;
+        }
+    </style>
+    <script src="js/jquery-1.12.2.js"></script>
+    <script>
+        $(function (){
+            //实现功能
+            //把左边全部的子元素放到右边
+            $("#btn1").on("click",function(){
+                var opts = $("option");
+                var right = $("#right");
+                right.append(opts);
+            });
+            //把右边全部的子元素放到左边
+            $("#btn2").on("click",function(){
+                var opts = $("option");
+                var left = $("#left");
+                left.append(opts);
+            });
+
+            //从左边选取已经选中的添加到右边
+            $("#btn3").on("click",function(){
+                //找到左边已经选中的
+                var opts = $("option");
+                var right = $("#right");
+                for(var i = 0; i < opts.length ; i++){
+                    if(opts[i].selected){
+                        right.append(opts.eq(i));
+                    }
+                }
+
+            });
+            $("#btn4").on("click",function(){
+                //找到左边已经选中的
+                var opts = $("option");
+                var left = $("#left");
+                for(var i = 0; i < opts.length ; i++){
+                    if(opts[i].selected){
+                        left.append(opts.eq(i));
+                    }
+                }
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="father">
+    <select name="" id="left" multiple size="10">
+    <option value="">林志玲</option>
+    <option value="">范冰冰</option>
+    <option value="">陈奕迅</option>
+    <option value="">周杰伦</option>
+    <option value="">胡歌</option>
+    <option value="">爱谁谁</option>
+</select>
+</div>
+<input type="button" value=">>" id="btn1"/>
+<input type="button" value="<<" id="btn2"/>
+<input type="button" value=">" id="btn3"/>
+<input type="button" value="<" id="btn4"/>
+<select name="" id="right" multiple>
+</select>
+
+</body>
+</html>

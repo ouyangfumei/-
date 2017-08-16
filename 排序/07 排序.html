@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            font-size: 4em;
+            text-align: center;
+        }
+        ul {
+            width: 600px;
+            border: 2px solid #666;
+            margin: 100px auto;
+            list-style: none;
+        }
+        li {
+            border: 1px solid red;
+            height: 40px;
+            line-height: 40px;
+        }
+        li:nth-child(even) {
+            background-color: #0099cc;
+        }
+        li:nth-child(odd){
+            background-color: #aaaaaa;
+        }
+    </style>
+    <script src="jq/jquery-1.12.2.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".sortable").sortable();
+        });
+    </script>
+</head>
+<body>
+<h2>拖动li标签排序</h2>
+<ul class="sortable">
+    <li>我是第1个li</li>
+    <li>我是第2个li</li>
+    <li>我是第3个li</li>
+    <li>我是第4个li</li>
+    <li>我是第5个li</li>
+    <li>我是第6个li</li>
+    <li>我是第7个li</li>
+    <li>我是第8个li</li>
+    <li>我是第9个li</li>
+    <li>我是第10个li</li>
+</ul>
+</body>
+</html>
